@@ -1,0 +1,78 @@
+Para relacionar el html con el css tenemos que poner en el head del html:
+<link rel="stylesheet" type="text/css" hreef"NombreArchivo.css">
+
+Se puede usar css dentro de la cabecera del CSS con la etiqueta <style> EJ línea 13
+También en cada etiqueta mediante style; EJ: línea 32
+
+En CSS tenemos selectores (ID, Clases, elementos)
+También tenemos propiedades (Color,Ancho,Fuente,etc)
+Y tenemos los valores (10px, etc)
+
+Reglas de estilo: 
+Selector {
+    propiedad1; valor;
+    propiedad2; valor;
+}
+
+Los comentarios en CSS se escriben /* para abrir y */ para cerrar.
+
+background-color = Color de fondo;
+font-family = cambiar tipografía;
+font-size = tamaño letra;
+border = borde;
+width = ancho;
+height = alto
+
+hover: cambia de color cuando estoy arriba del mouse
+
+
+tengo clases e Ids
+
+El ID es único, un solo elemento
+La clase es 0, 1 o muchos elementos
+
+
+
+20/03/24
+
+Tengo una caja con un texto dentro.
+Quiero agrandar los margenes internos y externos.
+
+Del borde para afuera = Margin
+Del borde para adentro = padding
+
+tengo 4 margenes y padding, el de 
+arriba = top.
+abajo = bottom.
+right = derecha.
+left = izquierda.
+en el medio va el contenido, x ej img, botton, texto, etc.
+
+EJ:
+Padding: 10px 2px 5px 15px
+           T    R   B   L
+padding: top right bottom left
+
+Margin: 10px 2px 5px 15px
+         T    R   B   L
+Margin: top right bottom left
+
+también se puede hacer con dos parametros
+
+EJ:
+Padding: 10px           15px
+           TB            RL
+padding: top/bottom    right/left
+
+Margin: 10px           15px
+           TB            RL
+Margin: top/bottom    right/left
+
+También poniendo uno solo vas a tener los 4 margenes/padding
+Padding: 10px (nos quedan los 4 iguales, osea 10px)
+T=B=R=L
+
+
+Absoluta/Relativa
+
+

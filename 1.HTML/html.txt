@@ -1,0 +1,32 @@
+Parráfos
+Etiqueta <p></p> = Parráfo
+
+Salto de línea
+Etiqueta <br> = Salto de línea (no tiene cierre)
+
+lorem = texto de relleno en latín
+
+Encabezados
+<h1></h1>   Encabezados, según prioridad de número de menor a mayor = Solo un h1 por sitio web (recomendación)
+<h2></h2>   Encabezados, según prioridad de número de menor a mayor
+<h3></h3>   Encabezados, según prioridad de número de menor a mayor
+<h4></h4>   Encabezados, según prioridad de número de menor a mayor
+<h5></h5>   Encabezados, según prioridad de número de menor a mayor
+<h6></h6>   Encabezados, según prioridad de número de menor a mayor   
+
+
+Listas Desordenadas (Unorderer List)
+<ul></ul>
+Para llenar esta lista se usa la etiqueta <li></li> (item list)
+
+
+Listas Ordenadas (Order List)
+<ol></ol>
+Para llenar esta lista se usa la etiqueta <li></li> (item list)
+
+
+Decoradores de texto
+<strong></strong> = negrita
+<em>></em> = cursiva
+
+<hr> = linea horizontal

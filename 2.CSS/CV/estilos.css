@@ -1,0 +1,50 @@
+.DivContacto{
+    background-color: aqua;
+    
+}
+.divInfo{
+    background-color: lightseagreen;
+}
+h2{
+    font-size: 40px;
+}
+ul{
+    color: yellow; 
+    font-weight: bold;
+    font-size: 30px;
+}
+.estilo{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+}
+.info{
+    color: fuchsia;
+    font-weight: bold;
+}
+#unico{
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: hotpink;
+    font-weight: bold;
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+    color: black;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h3{
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: chocolate;
+    font-weight: bold;
+}
+.fecha{
+    color: blue;
+    font-size: 30px;
+    font-weight: bold;
+}
+body{
+    background-color: blue;
+}

@@ -1,0 +1,27 @@
+.div1{
+    width: 1400px;
+    height: 200px;
+    background-color: blue;
+    border-radius: 20%;
+    border-bottom: 16px lightblue;
+    margin: 0px auto;
+}
+
+.div2{
+    width: 1700px;
+    height: 200px;
+    background-color: yellow;
+    border-radius: 20%;
+    border-bottom: 1cm;
+    border-top: gold;
+    margin: 0px auto;
+}
+
+.div3{
+    width: 1400px;
+    height: 200px;
+    background-color: blue;
+    border-radius: 20%;
+    border-top: lightblue;
+    margin: 0px auto;
+}

@@ -1,0 +1,46 @@
+/*{
+    background-color:blue;
+}
+*/
+h3{
+    color:  red;
+}
+
+div{
+    background-color: blueviolet;
+}
+
+h3{
+    background-color: coral;
+}
+
+div p{
+    border: 2cm;
+    background-color: aqua;
+    color: blue;
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+p > span{
+    color: yellow;
+}
+
+h2:hover{
+    color: chocolate;
+}
+
+span:hover{
+    background-color: blueviolet;
+    color: black;
+}
+
+/*Clases*/
+.parrafo{
+    border: 0.1em dashed blueviolet;
+}
+
+/* ID */
+
+#mi-elemento{
+    padding: 50px;
+}

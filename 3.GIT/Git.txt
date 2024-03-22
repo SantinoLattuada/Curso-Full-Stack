@@ -1,0 +1,22 @@
+Manual de como utilizar GIT.
+
+Para arrancar desde 0 debemos entrar a GITHUB
+
+Una vez en github, vamos a crear un nuevo repositorio.
+Seleccionamos el dueño, el nombre del repositorio (sin espacios) y la descripción (opcional).
+Hacemos el repositorio público. Creamos el repositorio
+
+Una vez creado, 
+
+Abrimos la carpeta madre donde queremos, hacemos click derecho y seleccionamos  "open git bash here".
+
+1. Una vez dentro ponemos "git init" para crear el repositorio. (se hace una sola vez)
+2. Ponemos "git status" para saber el estado de los archivos
+3. Para agregar archivos al repositorio tenemos que poner{ 
+    para agregar todos los de la carpeta: git add .
+    o para agregar uno: git add "nombreArchivo"
+}
+4. Confirmamos los cambios con ´git commit -m "un mensaje de commit para saber de que trata el cambio"´ 
+5. Debemos poner en la consola git remote add origin "URL COMPLETA"   .  Esto para linkear el repositorio de la nube con el local
+6. Y luego: git push -u origin main
+

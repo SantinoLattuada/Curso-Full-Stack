@@ -16,7 +16,6 @@ Abrimos la carpeta madre donde queremos, hacemos click derecho y seleccionamos  
     para agregar todos los de la carpeta: git add .
     o para agregar uno: git add "nombreArchivo"
 }
-4. Confirmamos los cambios con ´git commit -m "un mensaje de commit para saber de que trata el cambio"´ 
+4. Confirmamos los cambios con "git commit -m "un mensaje de commit para saber de que trata el cambio"  (van con "" para abrir y cerrar) 
 5. Debemos poner en la consola git remote add origin "URL COMPLETA"   .  Esto para linkear el repositorio de la nube con el local
 6. Y luego: git push -u origin main
-

@@ -1,0 +1,31 @@
+
+
+
+
+
+Para poder alinear elementos de manera horizontal debemos utilizar la propiedad: (teniendo en cuenta que debe estar aplicado el display: flex;)
+justify-content: otra propiedad; {
+
+    flex-start: Alinea elementos al lado izquierdo del contenedor.
+    flex-end: Alinea elementos al lado derecho del contenedor.
+    center: Alinea elementos en el centro del contenedor.
+    space-between: Muestra elementos con la misma distancia entre ellos.
+    space-around: Muestra elementos con la misma separación alrededor de ellos.
+}
+Por ejemplo si queremos llevar un elemento al lado derecho de la pantalla debemos poner justify-content: flex-end;
+
+Para poder alinear elemento de manera vertical debemos utilizar la propiedad: (teniendo en cuenta que debe estar aplicado el display: flex;)
+align-items: otra propiedad;{
+
+    flex-start: Alinea elementos a la parte superior del contenedor.
+    flex-end: Alinea elementos a la parte inferior del contenedor.
+    center: Alinea elementos en el centro (verticalmente hablando) del contenedor.
+    baseline: Muestra elementos en la línea base del contenedor
+    stretch: Elementos se estiran para ajustarse al contenedor.
+}
+Por ejemplo si queremos llevar un elemento abajo de todo debemos poner align-items: flex-end;
+
+Entonces por ejemplo si queremos poner un elemento en el centro de la pantalla debemos utilizar:
+
+justify-content: center;
+align-items: center;

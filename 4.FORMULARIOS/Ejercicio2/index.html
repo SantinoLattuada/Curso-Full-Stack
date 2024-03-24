@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaPet</title>
+</head>
+<body>
+    
+    <h1>Bienvenidos a mi InstaPet</h1>
+
+    <div>
+        <form action="formularioimaginario.txt" method="get">
+            <div>
+                <!--Parte 1-->
+                <label for="">Nombre de la mascota: <input type="text" placeholder="Nombre de la mascota" required></label>
+                <br><br>
+                <label for="">Edad de la mascota: <input type="number" placeholder="Edad" min="0" max="20" required></label>
+                <br><br>
+                <label for="">Correo electrónico: <input type="email" placeholder="Correo electronico:" required></label>
+                <br><br>
+                <label for="">Contraseña: <input type="password" placeholder="Contraseña:" required></label>
+                <br><br>
+                <label for="">Color: <input type="color" required></label>
+            </div>
+            <div>
+                <div>
+                    <p>Seleccione el sexo de su mascota: </p>
+                    <label><input type="radio" name="sexo" value="macho">Masculino</label>
+                    <br>
+                    <label><input type="radio" name="sexo" value="femenino">Femenino</label>
+                    <br>
+                </div>
+                <!--Parte 2-->
+                <div>
+                    <p>Seleccione su tipo de mascota</p>
+                    <select name="tipo_de_mascota" id="">
+                        <option value="Miau">Gato</option>
+                        <option value="Guau">Perro</option>
+                        <option value="Cuy">Cobayo</option>
+                        <option value="Otra">Otra</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Contamos como es tu mascota! <textarea name="" id="" cols="40" rows="10"></textarea></label>
+                </div>
+                
+            </div>
+            <br><br>
+            <div> <!--Bases y condiciones-->
+                <label>Acepto bases y condiciones <input type="checkbox" name="bases\_y\_condiciones" value="acepta"></label>
+            </div>
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+
+
+</body>
+</html>

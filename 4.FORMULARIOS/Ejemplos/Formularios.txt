@@ -1,0 +1,34 @@
+etiqueta form = <form></form>
+
+<input> para empezar a poner información
+<input type="text u otro"> para saber con que se debe llenar el formulario
+<input placeholder="Ingrese su nombre"> envía un mensaje.
+<input type="password"> debe llenarse con una contraseña y no se ve (salen puntos)
+<input type="number"> debe llenarse con números
+<input type="number" step="num" min="num" max="num"> min y max son lo minimo y maximo que se puede poner. step de cuanto en cuanto suman los num
+
+<label></label> con la etiqueta Label podemos pedir la información antes de llenar el formulario, agregandole el dato a pedir y el input luego
+
+
+Para hacer que los form sean obligatorios de llenar debemos agregar required="required" en el input 
+
+
+<label>TextArea</TextArea><textarea cols="30" rows="10"></textarea> la etiqueta textArea nos agrega líneas para que el usuario pueda escribir
+con cols le doy la medida para la altura
+con rows el ancho para escribir
+
+el tipo checkbox sirve para marcar un cuadrito de respuesta
+<input type="checkbox">Opción 1
+<input type="checkbox">Opción 2
+
+Radio es otra forma de ponerlo, y con name="nombre" limitamos a poder marcar una sola
+<input type="radio" name="sexo">Masculino
+<input type="radio" name="sexo">Femenino
+
+
+Debemos agregar name"y un nombre" para poder enviar los datos a una base de datos mediante el metodo get o post
+get se envia x barra de direcciones URL
+post no se envia x la barra de direcciones URL
+esto se le debe agregar a la etiqueta form, x ejemplo:
+<form action="formulario.php" method="get">
+<form action="formulario.php" method="post">

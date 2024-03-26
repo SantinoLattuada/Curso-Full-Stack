@@ -3,6 +3,8 @@
 
 
 
+/* Eje Principal. FORMA HORIZONTAL */
+ 
 Para poder alinear elementos de manera horizontal debemos utilizar la propiedad: (teniendo en cuenta que debe estar aplicado el display: flex;)
 justify-content: otra propiedad; {
 
@@ -13,6 +15,8 @@ justify-content: otra propiedad; {
     space-around: Muestra elementos con la misma separación alrededor de ellos.
 }
 Por ejemplo si queremos llevar un elemento al lado derecho de la pantalla debemos poner justify-content: flex-end;
+
+/* Eje transversal. FORMA VERTICAL */
 
 Para poder alinear elemento de manera vertical debemos utilizar la propiedad: (teniendo en cuenta que debe estar aplicado el display: flex;)
 align-items: otra propiedad;{

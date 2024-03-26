@@ -1,0 +1,29 @@
+html{
+    background-color: #BEC5C2;
+}
+h1{
+    text-align: center;
+}
+.container1{
+    display: flex;
+    justify-content: space-around;
+    background-color: #DAE2DF;
+}
+
+.item1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.subitem1{
+    display: flex;
+    background-color: #A2A7A5;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    align-items: flex-start;
+}
+h5{
+    font-size: 17px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

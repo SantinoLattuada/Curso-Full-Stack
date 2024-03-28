@@ -33,3 +33,9 @@ Entonces por ejemplo si queremos poner un elemento en el centro de la pantalla d
 
 justify-content: center;
 align-items: center;
+
+
+
+
+GRID
+

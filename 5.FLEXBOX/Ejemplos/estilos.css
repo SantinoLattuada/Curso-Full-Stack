@@ -10,3 +10,9 @@
     width: 100%;
     border: 0.1em dotted pink;
 }
+
+.contenedor2{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+}

@@ -40,3 +40,17 @@ img{
 .dukiDescrp{
     margin-right: 30px;
 }
+.container1{
+    display: flex;
+    justify-content: space-around;
+    background-color: #379392;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.songs{
+    display: flex;
+    justify-content: space-around;
+}
+.borde{
+    border: solid red;
+}

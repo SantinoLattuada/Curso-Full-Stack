@@ -1,0 +1,44 @@
+Estructura condicional del IF
+
+if(condicion){
+    .....
+    ....
+    .....
+}
+else{
+    .....
+    .....
+    ...
+}
+
+Operadores
+
+- Mayor ( > )
+
+- Menor ( < )
+
+- Mayor o igual ( >= )
+
+- Mayor o igual ( >= )
+
+- Menor o igual ( <= )
+
+- Igual ( == )
+
+- Distinto ( != )
+
+1. 25 >= 40 ----> Falso
+2. 25 >= 25 ----> Verdadero
+3. "hola" == 20.4 ---> Falso
+4. "hola" == "hola" ---> Verdadero
+5. "hola" != "20.4" ---> Verdadero
+
+Operadores Lógicos (Comparan dos o más condiciones)
+
+AND (y) ---> &&
+OR (o) ---> ||
+NOT (negación) ---> !
+
+condicion1 && condicion2
+condicion1 || condicion2
+!condicion1

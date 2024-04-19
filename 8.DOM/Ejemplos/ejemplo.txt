@@ -42,3 +42,21 @@ NOT (negación) ---> !
 condicion1 && condicion2
 condicion1 || condicion2
 !condicion1
+
+document.queryselector("img")
+
+/*
+--> manipular el texto y el contenido
+  .textContent (solo es para elementos que muestren texto: h1, span, p)
+  .innerHTML (podemos modificar el contenido del elemento)
+
+--> manipular atributos
+  .getAttribute("nombreDelAtributo") -> nos devuelve el valor del atributo
+  .setAttribute("nombreDelAtributo", "url") -> define un valor para el atributo
+*/
+
+EJ DE COMO SELECCIONAR ARCHIVOS DEL HTML
+// let titulo = document.querySelector("h1")
+// let parrafo = document.querySelector("p")
+// let contenedor = document.querySelector("#contenedor")
+// let nombre = prompt("Ingres su nombre")

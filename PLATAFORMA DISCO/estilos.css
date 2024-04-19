@@ -54,3 +54,13 @@ img{
 .borde{
     border: solid red;
 }
+#welcome{
+    color: white;
+    font-size: 25px;
+}
+#name{
+    color: white;
+    font-size: 25px;
+    display: flex;
+    justify-content: right;
+}

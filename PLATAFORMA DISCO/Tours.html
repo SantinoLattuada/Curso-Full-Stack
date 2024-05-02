@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="estilos.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/f96280b9ab.js" crossorigin="anonymous"></script>
+    <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js "> </script> 
 </head>
 <body>
-
-    <span id="name"></span>
-    <img id="img"></img>
+    <div class="container9">
+        <img id="img"><i class="fa-solid fa-ticket fa-2xl"></i></img>
+        <span id="name"></span>
+    </div>
 
     <div class="title">
         <h1 class="text-8xl text-white">Tours y Fechas</h1>
@@ -21,7 +23,7 @@
     
     <span id="welcome"></span>
 
-    <script src="tours.js"></script>
+
     <div class="container1">
         <a href="index.html" class="text-xl text-white">Home</a>
         <a href="addAlbum.html" class="text-xl text-white">Add Album</a>
@@ -34,13 +36,14 @@
     <br><br>
     <div class="flex flex-col justify-center items-center bg-[#379392]" >
         <ol>
-            <li class="text-white mb-3">1. 10 de abril. Arena VFG Mexico. Conseguí tus tickets acá <a href="https://www.songkick.com/es/concerts/41729400-duki-at-arena-vfg" class="text-rose-400"> ARENA VFG</a></li>
-            <li class="text-white mb-3">2. 12 de abril. Monterrey Mexico. Conseguí tus tickets acá <a href="https://www.songkick.com/es/concerts/41729403-duki-at-auditorio-citibanamex" class="text-rose-400"> MONTERREY</a></li>
-            <li class="text-white mb-3">3. 13 de abril. Mexico City. Conseguí tus tickets acá <a href="https://www.songkick.com/es/concerts/41729409-duki-at-palacio-de-los-deportes" class="text-rose-400">MEXICO CITY</a></li>
-            <li class="text-white mb-3">4. 8 de Junio. Madrid, Bernabeu. Conseguí tus tickets acá <a href="https://www.songkick.com/es/concerts/41260506-duki-at-estadio-santiago-bernabeu" class="text-rose-400">BERNABEU</a></li>
+            <li class="text-white mb-3">1. 10 de abril. Arena VFG Mexico. Conseguí tus tickets acá <button id="evento1" class="text-rose-400"> ARENA VFG</button></li>
+            <li class="text-white mb-3">2. 12 de abril. Monterrey Mexico. Conseguí tus tickets acá <button id="evento2" class="text-rose-400"> MONTERREY</button></li>
+            <li class="text-white mb-3">3. 13 de abril. Mexico City. Conseguí tus tickets acá <button id="evento3" class="text-rose-400">MEXICO CITY</button></li>
+            <li class="text-white mb-3">4. 8 de Junio. Madrid, Bernabeu. Conseguí tus tickets acá <button id="evento4" class="text-rose-400">BERNABEU</button></li>
         </ol>
         <img class="borde" src="https://static.eldiario.es/clip/a171b3f9-c5e3-4d0c-9b38-7d47451abaca_16-9-discover-aspect-ratio_default_0.jpg" height="1000px" width="1000px">
     </div>
 
+    <script src="tours.js"></script>
 </body>
 </html>

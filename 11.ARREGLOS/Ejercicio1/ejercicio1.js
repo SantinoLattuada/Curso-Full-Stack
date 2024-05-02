@@ -61,4 +61,4 @@ let tercerNum = array[2];
 let ultimoNum = array[cantNumeros - 1];
 
 imprimirResultados(cantNumeros, tercerNum, ultimoNum, sumatoria);
-sumatoria = 0;
+//sumatoria = 0;

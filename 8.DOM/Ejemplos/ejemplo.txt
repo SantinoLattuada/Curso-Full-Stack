@@ -56,7 +56,18 @@ document.queryselector("img")
 */
 
 EJ DE COMO SELECCIONAR ARCHIVOS DEL HTML
-// let titulo = document.querySelector("h1")
+// let titulo = document.querySelector("h1") 
+// let titulo = document.GetElementsByTagName("h1"); //por etiqueta
+// let titulo = document.GetElementsById("h1"); //por ID
+// let titulo = document.GetElementsByClassName("h1"); //por clase 
+// let titulo = document.GetElementsByName("h1"); //por name
+// let titulo = document.GetElementsByName("h1"); //Selecciona el primer h1 que encuentre
+// let titulo = document.GetElementsByName("h1"); //Selecciona todos los h1 que encuentre
+
 // let parrafo = document.querySelector("p")
 // let contenedor = document.querySelector("#contenedor")
 // let nombre = prompt("Ingres su nombre")
+
+
+//Cambiar de texto en el html:
+// variable.textContent = "hola hola hola"

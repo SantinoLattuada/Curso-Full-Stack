@@ -1,0 +1,11 @@
+1. Crear proyecto: npm init
+
+1.1 nombre, version, archivo principal
+
+2. Crear archivo index.js (archivo principal)
+
+3. Instalar parquete Nodemon: npm install nodemon
+
+4. Ejecutar servidor: npx nodemon index.js. Para dejar de ejecutar ctrl + C
+
+5. Instalar express: npm install express

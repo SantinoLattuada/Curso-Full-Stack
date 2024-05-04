@@ -72,9 +72,9 @@ img{
 #img{
     margin-right: 50px;
 }
-/*
-button:disabled{
-    background-color: gray;
-    color: gray;
+.favorite-icon {
+    margin-right: 0.5px;
 }
-*/
+.favorite {
+    color: gold; /* Color del favorito */
+}

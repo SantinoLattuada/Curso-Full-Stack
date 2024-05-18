@@ -25,4 +25,4 @@ boton.addEventListener("click", function(){
     let artista = document.getElementById("artista").value;
 
     validateInputs(titulo, artista);
-})
+});

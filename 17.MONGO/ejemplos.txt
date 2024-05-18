@@ -1,0 +1,129 @@
+Operadores matemáticos.
+
+$eq: igual que. (equal)
+$ne: distinto que (not equal)
+$gt: mayor que (grater than)
+$gte: mayor o igual que (greater than or equal)
+$lt: menor que (lower than)
+$lte: menor o igual que (lower than or equal)
+$exists: existe o no un campo (por ej: { email: $exists: true})
+
+
+Consultas son en formato JSON ---> { clave : valor }
+
+EJEMPLO DE Consultas
+
+//Buscar entre todos los documentos de mi colección, el/los personajes que el nombre sea igual a "Homero Simpsons"
+{ nombre: "Homero simpsons" }
+{ nombre: { $eq: "Homero Simpsons" }}
+
+
+//Buscar aquellos personajes que su edad es mayor o igual a 25
+{ edad: { $gte: 25}}
+
+
+//Buscar aquellos personajes que sean solteros
+
+{ soltero: { $eq: true }}
+
+//Buscar documentos con el dato distinto de Lopez
+
+{ apellido: { $ne "Lopez" }}
+
+//Buscar aquellos documentos donde exista el dato email
+{ email: "{ $exists: true }" }
+
+----------------------------------------------------------
+
+OPERADORES LÓGICOS (and y or)
+
+and{ clave: valor, clave:valor }
+
+//Busco los documentos que cumplan con las condiciones: nombre= "Juan" y edad = 19
+{ nombre: "Juan", edad: 18}
+
+//Buscar los documentos con nombre Juan, edad menor o igual que 20 y que tenga email
+{ nombre: "Juan", edad: {$lte: 20, { email: "{ $exists: true }" }} }
+
+OR 
+{ $or: [ {condicion1}, {condicion2}, {condicion3} ] }
+
+//Buscar documentos que nombre = Juan ó Edad > 25
+
+{ $or: [{nombre: "Juan"}, {edad: {$gt:25}} ] }
+
+---------------------------------------------------------
+
+REGEX (Regular Expression)
+
+//Buscar la palabara "la" dentro del campo nombre
+{ nombre: { $regex: /la/} } --> Buscar la palabra "la" dentro del campo nombre
+{ nombre: { $regex: /la$/ } } --> Busca la palabra "la" al final del campo nombre
+{ nombre: { $regex: /la/i } } --> Busca la palabra "la" al principio del campo nombre
+{ nombre: { $regex: /^la/ } } --> Busca la palabra "la" dentro del campo nombre, no importa si es MAY o MIN
+
+
+Para usar otra base de datos es:
+use "nombre" (sin ")
+
+Para crear colecciones desde la base de datos:
+db.createCollection("coleccion_ejemplo")
+
+Para borrar una coleccion desde la base de datos:
+db.coleccion_ejemplo.drop()
+
+Para insertar un documento a una coleccion:
+db.miColeccion.insertOne({ clave: valor}) //de a uno
+db.miColeccion.insertMany( [{clave: valor}, {clave: valor}, {clave: valor}]) //de a muchos
+
+Para eliminar un documento de una coleccion:
+db.miColeccion.deleteOne({ clave:valor}) //Elimina el primero que encuentra segun clave:valor
+db.miColeccion.deleteMany({ clave:valor})// Elimina todos los que coincidan segun clave:valor
+
+Para Modificar la info de un archivo es:
+db.miColeccion.updateOne({ condicion }, { $set: { campo: "nuevo valor}}) //Modifica el primero que encuentre
+db.miColeccion.updateMany({ condicion }, { $set: { campo: "nuevo valor}})//Modifica todos los que coincidan
+
+Para modificar la clave (campo) en un archivo:
+db.micoleccion.updateMany({ condicion }, {$rename: {claveanterior: "NombreClaveNueva"}})
+db.familia.updateMany({ viven_juntos: {$exists: true} }, {$rename: {viven_juntos: "Conviven"}}) //EJ CLASE
+
+Para hacer consultas dentro de la base de datos:
+db.micoleccion.find( { condicion_de_busqueda} )
+
+db.miColeccion.find({ condicion_busqueda }, { nombre: 1, _id: 0 }) ---> Busca todos los elementos que coincidan con mi condición de búsqueda y muestra sólo el campo nombr
+db.miColeccion.find().sort({ nombre: -1 }) ---> Busco todos los documentos y los ordeno por nombre de forma descendente (Z-A)
+db.miColeccion.find().limit(3) ---> BUsca todos los documentos y me muestra sólo los 3 primero
+db.miColeccion.find().limit(3).skip(2) ---> Busca todos los documentos y me muestra 3 documentos, pero salteando los 2 primeros
+
+
+METODOS:
+GET --> LEER
+POST --> CREAR
+PUT --> MODIFICAR
+PATCH --> MODIFICAR
+DELETE --> ELIMINAR
+
+
+
+Pasos. npm install
+
+1 - npm init (iniciamos proyecto de Node)
+2 - npm install express (instalamos el modulo de "express")
+3 - npm install nodemon (instalar un liveserver, cuando actualizamos algo del codigo se reinicia el servidor)
+4 - npm install mongoose (instalamos el paquete de "mongoose")
+5 - creamos archivo index.js (nuestro archivo principal)
+npm install cors
+
+
+
+
+Proyecto: TO DO LIST
+
+-Crear tarea (titulo, descipcion, terminada TRUE o FALSE). [POST]
+-Ver todas las tareas. [GET]
+-Modificar una tarea. [PUT]
+-Eliminar una tarea. [DELETE]
+
+FRONTEND -----> BACKEND
+         <-----

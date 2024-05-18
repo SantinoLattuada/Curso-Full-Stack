@@ -1,0 +1,83 @@
+Construir un ecommerce de productos de tecnología.
+- La / las colecciones  (hasta 10)
+- 2 o 3 ejemplos documentos (de la coleccion productos)
+
+Colecciones:
+
+-Productos
+{   
+    _id: 1
+    "Producto": "Televisor 50 pulgadas Samsung"
+    "Categoria": "Televisores",
+    "Marca": "Samsung",
+    "Modelo": "ASDASD",
+    "SKU": "SSG50P",
+    "EAN": "999999",
+    "Origen": "Italia",
+    "Stock": 10, ????
+    "Peso": 40,
+}
+{   
+    _id: 2
+    "Producto": "Computadora DELL 16gb de Ram"
+    "Categoria": "Computadoras",
+    "Marca": "DELL",
+    "Modelo": "ASDASD",
+    "SKU": "PC16GB",
+    "EAN": 11111,
+    "Origen": "Francia",
+    "Stock": 1, ????
+    "Peso": 5,
+}
+{   
+    _id: 3
+    "Producto": "Celular"
+    "Categoria": "Iphone 15 pro max super ultra",
+    "Marca": "Apple",
+    "Modelo": "ASDASD",
+    "SKU": "IPH15",
+    "EAN": 12345,
+    "Origen": "EEUU",
+    "Stock": 100, ????
+    "Peso": 2,
+}
+
+-Ventas
+{
+    "Num Venta": 1,
+    "Nombre Cliente": "Fede",
+    "SKU": "SSG50P",
+    "Domicilio de entrega": "Av. Siempre Viva",
+    "Altura": "143",
+    "Horario de entrega": "9 a 18hs",
+
+}
+
+-Clientes
+{
+    "Num Cliente": 1234,
+    "Nombre" : "Santino",
+    "Edad" : 25,
+    "Email": "Santino@Santinino.com",
+    "Sexo" : "M",
+    "DNI" : 12.345.678,
+    "Domicilio" : "Av. Siempre Viva",
+    "Altura" : 142,
+}
+
+-Compras
+
+
+-Proveedores
+{
+    "Marca" : "Samsung",
+    "Producto" : "Televisores",
+    "Vendedor" : "Pedro Picapiedra",
+    "Telefono" : 12345678,
+    "Email" : "PPicapiedra@VentasSamsung.com",
+    "Domicilio deposito" : "Campana",
+    ID:
+
+}
+
+-Stock

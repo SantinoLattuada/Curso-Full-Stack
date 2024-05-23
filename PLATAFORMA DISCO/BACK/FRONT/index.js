@@ -25,8 +25,10 @@ const getAlbums =  async () => {
     const h2 = document.createElement("h2");
     h2.textContent = album.titulo;
     const a = document.createElement("a");
-    a.href = "http://localhost:5000/band/" + album._id;
-    a.text = album.titulo;
+    a.href = "http://localhost:5000/albums/band/" + album._id;
+    const redirect = (id) => { window.location.href = `./album.html?album=${id}`}
+    img.addEventListener('click', () => redirect(album._id));
+    a.text = album.titulo ? album.titulo : 'Disco';
 
     div.appendChild(newDiv)
     newDiv.appendChild(a);

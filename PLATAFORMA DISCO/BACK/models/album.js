@@ -25,6 +25,7 @@ let album = new Schema({
     canciones: {
         titulo: String,
         duracion: String,
+        youtubeLink: String
     },
     portada: String,
 });

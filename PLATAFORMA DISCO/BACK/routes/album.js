@@ -22,11 +22,13 @@ router.put("/band/:id", async function(req, res){
 
 // * --- VER TODOS LOS ALBUMS --- * //
 router.get("/band", async function(req, res){
+    //console.log("cualquier texto");
     let documento2 = await album.find();
     res.send(documento2);
 });
 // * --- VER ALBUM EN ESPECIFICO --- * //
-router.get("/band/:id", async function(req, res){
+router.get('/band/:id', async function(req, res){
+    console.log("HOLA COMO ANDAS");
     let albumId = req.params.id;
     let documento3 = await album.findById(albumId);
     res.send(documento3);

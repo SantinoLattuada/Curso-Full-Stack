@@ -21,4 +21,5 @@ boton.addEventListener('click', async function(e) {
         console.error('Error al enviar el álbum:', error);
         
     }
+    window.location.reload();
 });

@@ -41,18 +41,12 @@ function renderAlbum(album) {
   //Mostrar descripcion
   const p = document.createElement('p');
   p.classList.add('text-white', 'mb-4', 'ml-4', 'w-1/2');
-  p.textContent = "Descripción:" + album.descripcion;
+  p.textContent = "Descripción: " + album.descripcion;
   div.appendChild(p);
   
+  renderSongs(album);
   //Render songs
-  const songList = document.createElement('ol');
-  album.canciones.forEach(cancion => {
-    const songItem = document.createElement('li');
-    songItem.classList.add('text-white');
-    songItem.textContent = `${cancion.titulo} - ${cancion.duracion}`;
-    songList.appendChild(songItem);
-  });
-  div.appendChild(songList);
+  
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -62,3 +56,38 @@ document.addEventListener('DOMContentLoaded', function() {
       getAlbum(albumId);
   }
 });
+
+function renderSongs(album) {
+  const div = document.getElementById("view-album");
+  const songList = document.createElement('ol');
+  songList.classList.add('list-decimal', 'ml-6');
+
+  album.canciones.forEach((cancion, index) => {
+    const songItem = document.createElement('li');
+    songItem.classList.add('text-white', 'flex', 'items-center', 'justify-between', 'my-2');
+
+    const songDetails = document.createElement('span');
+    songDetails.textContent = `${index + 1}. ${cancion.titulo} - ${cancion.duracion}`;
+    songItem.appendChild(songDetails);
+
+    const actions = document.createElement('div');
+
+    const youtubeIcon = document.createElement('a');
+    youtubeIcon.href = cancion.youtubeLink;
+    youtubeIcon.target = '_blank';
+    youtubeIcon.classList.add('ml-4');
+    youtubeIcon.innerHTML = '<i class="fa fa-youtube-play text-red-500"></i>';
+    actions.appendChild(youtubeIcon);
+
+    const deleteIcon = document.createElement('span');
+    deleteIcon.classList.add('ml-4', 'cursor-pointer');
+    deleteIcon.innerHTML = '<i class="fa fa-trash text-red-500"></i>';
+    deleteIcon.addEventListener('click', () => deleteSong(album._id, index));
+    actions.appendChild(deleteIcon);
+
+    songItem.appendChild(actions);
+    songList.appendChild(songItem);
+  });
+
+  div.appendChild(songList);
+}

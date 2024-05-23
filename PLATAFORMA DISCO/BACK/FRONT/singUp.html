@@ -19,7 +19,7 @@
         <a href="editAlbum.html" class="text-xl text-white">Edit Album</a>
         <a href="addSongs.html" class="text-xl text-white">Add Songs</a>
         <a href="Tours.html" class="text-xl text-white">Tour dates</a>
-        <a href="login.html" class="text-xl text-white">Log Out</a>
+        <a href="login.html" class="text-xl text-white">Log In</a>
     </div>
     <br><br><br>
     <!--flex justify-center items-center bg-neutral-300 w-30 h-96 mx-96 my-60 pb-50 py-11-->
@@ -28,17 +28,20 @@
             <div class="border border-black">
                 <h3 class="flex justify-center text-5xl">Registro</h3>
                 <br><br>
-                <label class="text-5xl">Nombre: <input type="text" placeholder="Ingrese su nombre" required class="rounded-lg text-5xl"></label>
+                <label class="text-5xl">Nombre: <input id="nombre" type="text" placeholder="Ingrese su nombre" required class="rounded-lg text-5xl"></label>
                 <br><br>
-                <label class="text-5xl">Apellido: <input type="text" placeholder="Ingrese su apellido" required class="rounded-lg text-5xl"></label>
+                <label class="text-5xl">Apellido: <input id="apellido" type="text" placeholder="Ingrese su apellido" required class="rounded-lg text-5xl"></label>
                 <br><br>
-                <label class="text-5xl">Email: <input type="email" placeholder="Ingrese su Email" required class="rounded-lg text-5xl"></label>
+                <label class="text-5xl">Email: <input id="email" type="email" placeholder="Ingrese su Email" required class="rounded-lg text-5xl"></label>
                 <br><br>
-                <label class="text-5xl">Contraseña: <input type="password" placeholder="Ingrese su Contraseña" required class="rounded-lg text-5xl"></label>
+                <label class="text-5xl">Contraseña: <input id="contrasenia" type="password" placeholder="Ingrese su Contraseña" required class="rounded-lg text-5xl"></label>
                 <br><br>
-                <button class="text-5xl bg-[#4F86C6] border border-black px-2 mb-5" type="submit">Enviar</button>
+                <button id="enviarBtn" class="text-5xl bg-[#4F86C6] border border-black px-2 mb-5" type="submit">Enviar</button>
             </div>
         </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+    <script src="./singUp.js"></script>
 </body>
 </html> 

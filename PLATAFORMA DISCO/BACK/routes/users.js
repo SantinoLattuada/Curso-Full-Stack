@@ -3,7 +3,7 @@ const router = express.Router();
 const users = require("../models/users");
 
 
-router.post("/", async function(req, res){
+router.post("/user", async function(req, res){
     let datos = req.body;
     //console.log(datos);
     let nuevoUser = new users(datos);

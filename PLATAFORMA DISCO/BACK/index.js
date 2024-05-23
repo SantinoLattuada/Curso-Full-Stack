@@ -4,9 +4,9 @@ const PORT = 5000;
 const mongoose = require("./conexion");
 const path = require("path");
 const cors = require("cors");
-
+//app.use(bodyParser.urlencoded({extended: true}));
 // Middleware para parsear JSON y datos URL-encoded
-//app.use(express.json());
+app.use(express.json());
 //app.use(express.urlencoded({ extended: true }));
 
 //Importar las rutas

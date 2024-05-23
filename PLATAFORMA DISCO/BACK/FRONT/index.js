@@ -13,6 +13,7 @@ const getAlbums =  async () => {
     }
   }
   const renderAlbums = (album) => {
+    console.log(album);
     const div = document.getElementsByClassName('songs')[0]
     const newDiv = document.createElement('div')
     newDiv.classList.add('mb-20')
@@ -21,8 +22,14 @@ const getAlbums =  async () => {
     img.style.width = '250px'; // Establecer ancho en 250px
     img.style.height = '250px'; // Establecer alto en 250px
     img.src= album.portada ? album.portada : 'https://imgur.com/0uSALUr.png'
-    
+    const h2 = document.createElement("h2");
+    h2.textContent = album.titulo;
+    const a = document.createElement("a");
+    a.href = "http://localhost:5000/band/" + album._id;
+    a.text = album.titulo;
+
     div.appendChild(newDiv)
+    newDiv.appendChild(a);
     newDiv.appendChild(img)
     const p = document.createElement('p')
     p.classList.add('text-white','text-center', 'text-xl', 'font-bold')

@@ -5,6 +5,7 @@ const album = require("../models/album");
 // * --- CREATE ALBUM --- * //
 router.post("/band", async function(req, res){
     let datos = req.body;
+    console.log(datos);
     let nuevoAlbum = new album(datos);
     await nuevoAlbum.save();
     res.send("Album creado correctamente");

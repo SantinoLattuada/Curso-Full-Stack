@@ -13,7 +13,7 @@ let album = new Schema({
         maxLenght: 200,
     },
     anio: {
-        type: String,
+        type: Number,
         requerid: true,
         validate: {
             validator: function(v) {

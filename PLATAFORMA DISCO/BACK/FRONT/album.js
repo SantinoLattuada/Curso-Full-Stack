@@ -98,3 +98,26 @@ function renderSongs(album) {
 
   div.appendChild(songList);
 }
+const deleteSong = async (tituloCancion) => {
+  const albumId = getAlbumIdFromUrl();
+
+  try {
+      // Obtener el álbum actual
+      const album = await getAlbum(albumId);
+
+      // Remover la canción del array de canciones
+      const updatedCanciones = album.canciones.filter(cancion => cancion.titulo !== tituloCancion);
+
+      // Hacer la solicitud PUT para actualizar el álbum
+      await axios.put(`http://localhost:5000/albums/band/${albumId}/canciones`, { canciones: updatedCanciones });
+
+      // Mostrar alerta de éxito y recargar la página
+      swal("Éxito", "La canción ha sido eliminada correctamente", "success")
+          .then(() => {
+              window.location.reload();
+          });
+  } catch (error) {
+      console.error(error);
+      swal("Error", "No se pudo eliminar la canción", "error");
+  }
+};

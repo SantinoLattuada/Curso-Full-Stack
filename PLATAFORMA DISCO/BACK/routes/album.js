@@ -33,8 +33,7 @@ router.put("/band/:id/canciones", async function(req, res){
 });
 router.put("band/:id/canciones/:tituloCancion", async function(req, res){
     const { albumId, tituloCancion } = req.params;
-    const updatedAlbum = await album.findByIdAndUpdate(albumId,{ $pull: { canciones: { titulo: tituloCancion } } },
-    );
+    const updatedAlbum = await album.findByIdAndUpdate(albumId, { $pull: { canciones: { titulo: tituloCancion } } });
     res.send("Cancion eliminada del álbum")
 });
 
@@ -51,10 +50,10 @@ router.get('/band/:id', async function(req, res){
     res.send(documento3);
 });
 // * --- ELIMINAR ALBUM --- * //
-router.delete("/band/:id", async function(){
+router.delete("/band/:id", async function(req, res){
     let id_operacion = req.params.id;
-    album.findByIdAndDelete(id_operacion);
-    await res.send("Operacion eliminada con exito");
+    await album.findByIdAndDelete(id_operacion);
+    res.send("Operacion eliminada con exito");
 });
 
 module.exports = router;

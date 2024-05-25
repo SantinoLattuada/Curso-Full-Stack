@@ -7,10 +7,11 @@ const getAlbum = async (albumId) => {
   try {
       console.log("Fetching album with id:", albumId);
       const response = await axios.get(`http://localhost:5000/albums/band/${albumId}`);
-      console.log(response);
+      console.log(response.data);
       const albumToUse = response.data;
       renderAlbum(albumToUse);
   } catch (error) {
+    console.log(error);
       swal({
           title: 'Error!',
           text: `${error.response.data}`,
@@ -20,7 +21,6 @@ const getAlbum = async (albumId) => {
       redirect("./index.html");
   }
 }
-
 function renderAlbum(album) {
   const div = document.getElementById("view-album");
 
@@ -44,9 +44,16 @@ function renderAlbum(album) {
   p.textContent = "Descripción: " + album.descripcion;
   div.appendChild(p);
   
-  renderSongs(album);
   //Render songs
+  if (album.canciones) {
+    renderSongs(album); 
+  }
   
+  //Agregar canciones
+  //const a = document.createElement("a")
+  
+  const redirect = (id) => { window.location.href = `./addSongs.html?album=${id}`}
+  boton.addEventListener("click", () => redirect(album._id));
 }
 
 document.addEventListener('DOMContentLoaded', function() {

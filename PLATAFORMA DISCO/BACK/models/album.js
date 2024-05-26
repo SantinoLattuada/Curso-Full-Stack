@@ -1,6 +1,14 @@
 let mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+let cancion = new Schema({
+    numCancion: Number,
+    titulo: String,
+    duracion: String,
+    artista: String,
+    youtubeLink: String
+});
+
 let album = new Schema({
     titulo: {
         type: String,
@@ -23,11 +31,8 @@ let album = new Schema({
         }
     },
     canciones: {
-        numeroCancion: Number,
-        titulo: String,
-        duracion: String,
-        artista: String,
-        youtubeLink: String
+        type: [cancion],
+        default: []
     },
     portada: String,
 });

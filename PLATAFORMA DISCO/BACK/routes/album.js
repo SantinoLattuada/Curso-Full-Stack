@@ -5,10 +5,12 @@ const album = require("../models/album");
 // * --- CREATE ALBUM --- * //
 router.post("/band", async function(req, res){
     let datos = req.body;
-    console.log(datos);
+    if (!datos.canciones) {
+        datos.canciones = [];
+    }
     let nuevoAlbum = new album(datos);
     await nuevoAlbum.save();
-    res.send("Album creado correctamente");
+    res.status(201).json({ id: nuevoAlbum._id }); //Devuelvo el ID del album nuevo
 });
 // * --- EDITAR ALBUM --- * //
 router.put("/band/:id", async function(req, res){

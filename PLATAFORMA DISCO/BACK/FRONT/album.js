@@ -1,5 +1,17 @@
+const getAlbumIdFromUrl = () => {
+  const params = new URLSearchParams(window.location.search);
+  const albumId = params.get('album');
+  console.log('Album ID from URL:', albumId);  // Verifica el ID del álbum obtenido
+  return albumId;
+};
+
 document.addEventListener('DOMContentLoaded', function() {
   const albumId = getAlbumIdFromUrl();
+  if (albumId) {
+    getAlbum(albumId);
+  } else {
+    console.error('Album ID is undefined');
+  }
 
   document.getElementById("home").addEventListener("click", function(){
       window.location.href = 'index.html';
@@ -32,16 +44,13 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("logout").addEventListener("click", function(){
       window.location.href = "login.html";
   });
+  console.log("Fetching album with id:", albumId)
 });
 
-const getAlbumIdFromUrl = () => {
-  const params = new URLSearchParams(window.location.search);
-  return params.get('album');
-};
 
 const getAlbum = async (albumId) => {
   try {
-      console.log("Fetching album with id:", albumId);
+      //console.log("Fetching album with id:", albumId);
       const response = await axios.get(`http://localhost:5000/albums/band/${albumId}`);
       console.log(response.data);
       const albumToUse = response.data;
@@ -97,14 +106,6 @@ function renderAlbum(album) {
   boton2.addEventListener("click", () => redirect2(getAlbumIdFromUrl()));
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const albumId = getAlbumIdFromUrl();
-  console.log("Album ID from URL:", albumId);
-  if (albumId) {
-      getAlbum(albumId);
-  }
-});
-
 function renderSongs(album) {
   const div = document.getElementById("view-album");
   const songList = document.createElement('ol');
@@ -131,7 +132,7 @@ function renderSongs(album) {
     deleteIcon.classList.add('ml-4', 'cursor-pointer');
     deleteIcon.innerHTML = '<i class="fa fa-trash text-red-500"></i>';
 
-    deleteIcon.addEventListener('click', function(){
+    deleteIcon.addEventListener("click", function(){
       const index = Array.from(songList.children).indexOf(songItem);
       const updatedAlbum = { ...album }; 
       updatedAlbum.canciones.splice(index, 1);

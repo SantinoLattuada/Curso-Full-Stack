@@ -14,12 +14,26 @@ boton.addEventListener('click', async function(e) {
             titulo: titulo.value,
             descripcion: descripcion.value,
             anio: anio.value,
-            portada: imagen.value 
+            portada: imagen.value, 
+            canciones: []
         });
-        console.log(response.data);
+        const albumId = response.data.id;
+        if (albumId) {
+            swal({
+                title: '¡Álbum Creado!',
+                text: 'Has creado el álbum correctamente.',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+              }).then(() => {
+                window.location.href = `./album.html?album=${albumId}`;
+            });
+            console.log(response.data);
+        } else {
+            console.error('No se recibió el ID del álbum del servidor');
+            }
     } catch (error) {
         console.error('Error al enviar el álbum:', error);
         
     }
-    window.location.reload();
+    //window.location.reload();
 });

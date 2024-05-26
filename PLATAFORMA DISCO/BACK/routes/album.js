@@ -31,12 +31,11 @@ router.put("/band/:id/canciones", async function(req, res){
     res.send("Cancion agregada al álbum");
 });
 // * --- ELIMINAR UNA CANCION DEL ALBUM --- * //
-router.put("/band/:id/canciones/:numCancion", async function(req, res){
-    const { albumId, numCancion } = req.params;
-    const updatedAlbum = await album.findByIdAndUpdate(albumId, { $pull: { canciones: { numCancion: numCancion } } });
-    console.log(updatedAlbum);
-    console.log("Album ID:", albumId);
-    console.log("Número de Canción:", numCancion);
+router.put("/band/:id", async function(req, res){
+    const { id } = req.params;
+    const updatedAlbumData = req.body;
+    const updatedAlbum = await album.findByIdAndUpdate(id, { canciones: updatedAlbumData.canciones }, { new: true });
+    console.log("Album Actualizado: ", updatedAlbum);
     res.send("Canción eliminada del álbum");
 });
 // * --- VER TODOS LOS ALBUMS --- * //

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
 const getAlbumIdFromUrl = function(){
     const params = new URLSearchParams(window.location.search);
-    return params.get('album');
+    return params.get("album");
 };
 
 const getAlbum = async (albumId) => {
@@ -52,7 +52,7 @@ let boton = document.getElementById("botonEdit")
 boton.addEventListener("click", function(){
     addSong()
 });
-document.getElementById('botonCancel').addEventListener('click', function(){
+document.getElementById("botonCancel").addEventListener("click", function(){
     window.location.href = `./album.html?album=${albumId}`;
 });
 
@@ -68,10 +68,9 @@ const addSong = async () => {
     const newSong = { titulo, artista, duracion, youtubeLink, numCancion };
 
     try {
-        // Obtener el álbum actual
         const album = await getAlbum(albumId);
 
-        // Agregar la nueva canción al array de canciones
+        // Agrego la canción nueva al array de canciones
         album.canciones.push(newSong);
 
         // Hacer la petición PUT para actualizar el álbum

@@ -1,9 +1,9 @@
-let boton = document.getElementById('enviarBtn');
+let boton = document.getElementById("enviarBtn");
 
-const titulo = document.getElementById('titulo');
-const anio = document.getElementById('anio');
-const descripcion = document.getElementById('descripcion');
-const imagen = document.getElementById('imagen');
+const titulo = document.getElementById("titulo");
+const anio = document.getElementById("anio");
+const descripcion = document.getElementById("descripcion");
+const imagen = document.getElementById("imagen");
 
 boton.addEventListener('click', async function(e) {
     e.preventDefault();

@@ -131,8 +131,10 @@ function renderSongs(album) {
     deleteIcon.classList.add('ml-4', 'cursor-pointer');
     deleteIcon.innerHTML = '<i class="fa fa-trash text-red-500"></i>';
     deleteIcon.addEventListener('click', function(){
-      const numCancion = cancion.numCancion;
-      deleteSong(album._id, numCancion)
+      const index = Array.from(deleteIcon.parentElement.parentElement.children).indexOf(deleteIcon.parentElement);
+      const updatedAlbum = { ...album }; 
+      updatedAlbum.canciones.splice(index, 1);
+      deleteSong(album._id, updatedAlbum); 
     });
     actions.appendChild(deleteIcon);
 
@@ -142,15 +144,10 @@ function renderSongs(album) {
 
   div.appendChild(songList);
 }
-const deleteSong = async (albumId, numCancion) => {
+const deleteSong = async (albumId, updatedAlbum) => {
   try {
-    console.log(albumId);
-      const response = await axios.put(`http://localhost:5000/albums/band/${albumId}/canciones/${numCancion}`);
-      const updatedAlbum = await getAlbum(albumId);
-
-      const div = document.getElementById("view-album");
-      div.innerHTML = "";
-      // Mostrar alerta de éxito y recargar la página
+    const id = albumId;
+      const response = await axios.put(`http://localhost:5000/albums/band/${id}`, updatedAlbum);
       swal("Éxito", "La canción ha sido eliminada correctamente", "success")
           .then(() => {
               window.location.reload();

@@ -130,11 +130,12 @@ function renderSongs(album) {
     const deleteIcon = document.createElement('span');
     deleteIcon.classList.add('ml-4', 'cursor-pointer');
     deleteIcon.innerHTML = '<i class="fa fa-trash text-red-500"></i>';
+
     deleteIcon.addEventListener('click', function(){
-      const index = Array.from(deleteIcon.parentElement.parentElement.children).indexOf(deleteIcon.parentElement);
+      const index = Array.from(songList.children).indexOf(songItem);
       const updatedAlbum = { ...album }; 
       updatedAlbum.canciones.splice(index, 1);
-      deleteSong(album._id, updatedAlbum); 
+      deleteSong(updatedAlbum); 
     });
     actions.appendChild(deleteIcon);
 
@@ -144,9 +145,9 @@ function renderSongs(album) {
 
   div.appendChild(songList);
 }
-const deleteSong = async (albumId, updatedAlbum) => {
+const deleteSong = async (updatedAlbum) => {
   try {
-    const id = albumId;
+    const id = updatedAlbum._id;
       const response = await axios.put(`http://localhost:5000/albums/band/${id}`, updatedAlbum);
       swal("Éxito", "La canción ha sido eliminada correctamente", "success")
           .then(() => {

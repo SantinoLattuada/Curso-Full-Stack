@@ -23,6 +23,7 @@ let album = new Schema({
         }
     },
     canciones: {
+        numeroCancion: Number,
         titulo: String,
         duracion: String,
         artista: String,

@@ -52,8 +52,13 @@ function renderAlbum(album) {
   //Agregar canciones
   //const a = document.createElement("a")
   
-  const redirect = (id) => { window.location.href = `./addSongs.html?album=${id}`}
-  boton.addEventListener("click", () => redirect(album._id));
+  const redirect = (id) => { window.location.href = `./addSongs.html?album=${id}` }
+  const boton = document.getElementById("boton");
+  boton.addEventListener("click", () => redirect(getAlbumIdFromUrl()));
+
+  const redirect2 = (id) => { window.location.href = `./editAlbum.html?album=${id}` }
+  const boton2 = document.getElementById("boton2");
+  boton2.addEventListener("click", () => redirect2(getAlbumIdFromUrl()));
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -89,7 +94,10 @@ function renderSongs(album) {
     const deleteIcon = document.createElement('span');
     deleteIcon.classList.add('ml-4', 'cursor-pointer');
     deleteIcon.innerHTML = '<i class="fa fa-trash text-red-500"></i>';
-    deleteIcon.addEventListener('click', () => deleteSong(album._id, index));
+    deleteIcon.addEventListener('click', function(){
+      const numCancion = cancion.numCancion;
+      deleteSong(album._id, numCancion)
+    });
     actions.appendChild(deleteIcon);
 
     songItem.appendChild(actions);
@@ -98,19 +106,14 @@ function renderSongs(album) {
 
   div.appendChild(songList);
 }
-const deleteSong = async (tituloCancion) => {
-  const albumId = getAlbumIdFromUrl();
-
+const deleteSong = async (albumId, numCancion) => {
   try {
-      // Obtener el álbum actual
-      const album = await getAlbum(albumId);
+    console.log(albumId);
+      const response = await axios.put(`http://localhost:5000/albums/band/${albumId}/canciones/${numCancion}`);
+      const updatedAlbum = await getAlbum(albumId);
 
-      // Remover la canción del array de canciones
-      const updatedCanciones = album.canciones.filter(cancion => cancion.titulo !== tituloCancion);
-
-      // Hacer la solicitud PUT para actualizar el álbum
-      await axios.put(`http://localhost:5000/albums/band/${albumId}/canciones`, { canciones: updatedCanciones });
-
+      const div = document.getElementById("view-album");
+      div.innerHTML = "";
       // Mostrar alerta de éxito y recargar la página
       swal("Éxito", "La canción ha sido eliminada correctamente", "success")
           .then(() => {

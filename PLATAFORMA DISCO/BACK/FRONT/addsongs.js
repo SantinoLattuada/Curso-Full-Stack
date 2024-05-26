@@ -42,19 +42,19 @@ document.getElementById('botonCancel').addEventListener('click', function(){
 const addSong = async () => {
     
     const albumId = getAlbumIdFromUrl();
+    const numCancion = document.getElementById("numCancion").value;
     const titulo = document.getElementById("title").value;
     const artista = document.getElementById("artista").value;
     const duracion = document.getElementById("duracion").value;
     const youtubeLink = document.getElementById("url").value;
 
-    const newSong = { titulo, artista, duracion, youtubeLink };
+    const newSong = { titulo, artista, duracion, youtubeLink, numCancion };
 
     try {
         // Obtener el álbum actual
         const album = await getAlbum(albumId);
 
         // Agregar la nueva canción al array de canciones
-        album.canciones = [];
         album.canciones.push(newSong);
 
         // Hacer la petición PUT para actualizar el álbum

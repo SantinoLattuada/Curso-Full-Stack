@@ -1,4 +1,38 @@
-
+document.addEventListener('DOMContentLoaded', function() {
+    const albumId = getAlbumIdFromUrl();
+  
+    document.getElementById("home").addEventListener("click", function(){
+        window.location.href = 'index.html';
+    });
+  
+    document.getElementById("addAlbum").addEventListener("click", function(){
+        window.location.href = 'addAlbum.html';
+    });
+  
+    document.getElementById("editAlbum").addEventListener("click", function(){
+        if (albumId) {
+            window.location.href = `editAlbum.html?album=${albumId}`;
+        } else {
+            window.location.href = 'editAlbum.html';
+        }
+    });
+  
+    document.getElementById("addSongs").addEventListener("click", function(){
+        if (albumId) {
+            window.location.href = `addSongs.html?album=${albumId}`;
+        } else {
+            window.location.href = "addSongs.html";
+        }
+    });
+  
+    document.getElementById("tours").addEventListener("click", function(){
+        window.location.href = "Tours.html";
+    });
+  
+    document.getElementById("logout").addEventListener("click", function(){
+        window.location.href = "login.html";
+    });
+  });
 //let boton = document.getElementById("botonEdit");
 
 document.addEventListener('DOMContentLoaded', function() {

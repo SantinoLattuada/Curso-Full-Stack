@@ -1,23 +1,40 @@
-//---------------------------------------------PLEDU 12, OBJETOS---------------------------------------------------
-
-/*function validateInputs(titulo, artista){
-    if(titulo.trim() == '' && artista.trim() == ''){
-        swal("Debes completar el titulo y el artista", { icon: "error"
-        });
-    }
-    else if(titulo.trim() == ''){
-        swal("Debes completar el titulo", { icon: "error"
-        });
-    }
-    else if(artista.trim() == ''){
-        swal("Debes completar el artista", { icon: "error"
+document.addEventListener('DOMContentLoaded', function() {
+    const albumId = getAlbumIdFromUrl();
+  
+    document.getElementById("home").addEventListener("click", function(){
+        window.location.href = 'index.html';
     });
-}
-else{
-    swal("Editaste el album correctamente");
-}
-}*/
-const getAlbumIdFromUrl = () => {
+  
+    document.getElementById("addAlbum").addEventListener("click", function(){
+        window.location.href = 'addAlbum.html';
+    });
+  
+    document.getElementById("editAlbum").addEventListener("click", function(){
+        if (albumId) {
+            window.location.href = `editAlbum.html?album=${albumId}`;
+        } else {
+            window.location.href = 'editAlbum.html';
+        }
+    });
+  
+    document.getElementById("addSongs").addEventListener("click", function(){
+        if (albumId) {
+            window.location.href = `addSongs.html?album=${albumId}`;
+        } else {
+            window.location.href = "addSongs.html";
+        }
+    });
+  
+    document.getElementById("tours").addEventListener("click", function(){
+        window.location.href = "Tours.html";
+    });
+  
+    document.getElementById("logout").addEventListener("click", function(){
+        window.location.href = "login.html";
+    });
+  });
+  
+const getAlbumIdFromUrl = function(){
     const params = new URLSearchParams(window.location.search);
     return params.get('album');
 };

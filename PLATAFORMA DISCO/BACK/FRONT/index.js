@@ -1,4 +1,46 @@
 document.addEventListener('DOMContentLoaded', function() {
+  const albumId = getAlbumIdFromUrl();
+
+  document.getElementById("home").addEventListener("click", () => {
+      window.location.href = 'index.html';
+  });
+
+  document.getElementById("addAlbum").addEventListener("click", () => {
+      window.location.href = 'addAlbum.html';
+  });
+
+  document.getElementById("editAlbum").addEventListener("click", () => {
+      if (albumId) {
+          window.location.href = `editAlbum.html?album=${albumId}`;
+      } else {
+          window.location.href = 'editAlbum.html';
+      }
+  });
+
+  document.getElementById("addSongs").addEventListener("click", () => {
+      if (albumId) {
+          window.location.href = `addSongs.html?album=${albumId}`;
+      } else {
+          window.location.href = "addSongs.html";
+      }
+  });
+
+  document.getElementById("tours").addEventListener("click", () => {
+      window.location.href = "Tours.html";
+  });
+
+  document.getElementById("logout").addEventListener("click", () => {
+      window.location.href = "login.html";
+  });
+});
+
+const getAlbumIdFromUrl = () => {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('album');
+};
+
+
+document.addEventListener('DOMContentLoaded', function() {
     getAlbums();
 });
 

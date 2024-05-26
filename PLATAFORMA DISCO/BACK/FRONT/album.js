@@ -95,7 +95,6 @@ function renderAlbum(album) {
   }
   
   //Agregar canciones
-  //const a = document.createElement("a")
   
   const redirect = (id) => { window.location.href = `./addSongs.html?album=${id}` }
   const boton = document.getElementById("boton");

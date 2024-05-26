@@ -24,13 +24,14 @@ boton.addEventListener('click', async function(e) {
                 text: 'Has creado el álbum correctamente.',
                 icon: 'success',
                 confirmButtonText: 'Ok'
-              }).then(() => {
+            })
+            .then(() => {
                 window.location.href = `./album.html?album=${albumId}`;
             });
             console.log(response.data);
         } else {
             console.error('No se recibió el ID del álbum del servidor');
-            }
+        }
     } catch (error) {
         console.error('Error al enviar el álbum:', error);
         
